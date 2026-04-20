@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminario Virtual CUC 2026</title>
+    <meta name="description"
+        content="Seminario Virtual de Innovación y Tecnología de la Universidad de la Costa (CUC).">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <img src="assets/images/logo_cuc.png" alt="Logo CUC" class="logo-img">
+                <div class="logo-text">
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#hero" class="active">Inicio</a>
+                <a href="#programa">Programa</a>
+                <a href="#articulos">Artículos</a>
+                <a href="#galeria">Galería</a>
+                <button id="navLoginBtn" class="login-btn">Login</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN LANDING VIEW -->
+    <div id="landingView">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero">
+            <div class="hero-bg">
+                <img src="assets/images/hero_bg.jpg" alt="CUC Campus Background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <h1 class="animate-up">Seminario Virtual<br>de Investigación<br>CUC 2026</h1>
+                <p class="hero-subtitle animate-up delay-1">29 y 30 de Abril, 2026 | Modalidad Virtual</p>
+                <div class="hero-buttons animate-up delay-2">
+                    <a href="#inscripcion" class="btn btn-primary">Inscribirse Ahora</a>
+                    <a href="#articulos" class="btn btn-secondary">Explorar Artículos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE EL CONGRESO -->
+        <section id="sobre" class="section">
+            <div class="container">
+                <h2 class="section-title">Sobre el Congreso</h2>
+                <p class="section-subtitle">El evento académico sobre innovación tecnológica.</p>
+
+                <div class="cards-grid">
+                    <div class="card theme-card reveal">
+                        <i class="fa-solid fa-graduation-cap theme-icon"></i>
+                        <span>Educación Virtual</span>
+                    </div>
+                    <div class="card theme-card reveal delay-1">
+                        <i class="fa-solid fa-microchip theme-icon"></i>
+                        <span>Nuevas Tecnologías</span>
+                    </div>
+                    <div class="card theme-card reveal delay-2">
+                        <i class="fa-solid fa-lightbulb theme-icon"></i>
+                        <span>Innovación Social</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARTICULOS -->
+        <section id="articulos" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Artículos de Interés</h2>
+                <p class="section-subtitle">Explora las últimas tendencias en academia e investigación.</p>
+                <div class="articles-grid">
+                    <article class="article-card reveal" data-article="salud">
+                        <div class="article-img">
+                            <img src="assets/images/article_neuro.png" alt="Investigación Neurociencia">
+                        </div>
+                        <div class="article-body">
+                            <span class="category">Salud</span>
+                            <span class="research-group">G.I. Neurociencias (GINE)</span>
+                            <h3>Fronteras de la Neurociencia</h3>
+                            <p>Explorando los misterios del cerebro humano a través de mapeo neuronal y neuroplasticidad avanzada...</p>
+                            <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="article-card reveal delay-1" data-article="ingenieria">
+                        <div class="article-img">
+                            <img src="assets/images/article2.png" alt="Energías Renovables">
+                        </div>
+                        <div class="article-body">
+                            <span class="category">Ingeniería</span>
+                            <span class="research-group">G.I. Energía (GIEN)</span>
+                            <h3>Energías Renovables en el Caribe</h3>
+                            <p>Optimización de parques eólicos offshore y eficiencia solar en climas costeros...</p>
+                            <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="article-card reveal delay-2" data-article="sociales">
+                        <div class="article-img">
+                            <img src="assets/images/article3.png" alt="Impacto Social">
+                        </div>
+                        <div class="article-body">
+                            <span class="category">Ciencias Sociales</span>
+                            <span class="research-group">G.I. Educación y Sociedad (GIES)</span>
+                            <h3>Impacto Social de la Ciencia</h3>
+                            <p>Estudios sobre cómo la investigación universitaria reduce brechas de desigualdad...</p>
+                            <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIA CAROUSEL -->
+        <section id="galeria" class="section">
+            <div class="container">
+                <h2 class="section-title">Galería del Seminario</h2>
+                <p class="section-subtitle">Momentos destacados y tecnología en acción.</p>
+                
+                <div class="carousel-container reveal">
+                    <div class="carousel-slider" id="carouselSlider">
+                        <div class="carousel-item active">
+                            <img src="assets/images/gallery_new1.jpg" alt="Sesión de Trabajo">
+                            <div class="carousel-caption">
+                                <h3>Sesión de Trabajo Colaborativo</h3>
+                                <p>Investigadores y estudiantes compartiendo hallazgos en tiempo real.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/gallery_new2.jpg" alt="Entrega de Reconocimientos" class="object-top">
+                            <div class="carousel-caption">
+                                <h3>Reconocimiento a la Excelencia</h3>
+                                <p>Ceremonia de entrega de constancias por logros académicos destacados.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/gallery_new3.jpg" alt="Alianzas Internacionales">
+                            <div class="carousel-caption">
+                                <h3>Alianzas Institucionales</h3>
+                                <p>Colaboración estrecha con la Universidad Autónoma del Estado de Quintana Roo.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/gallery_new4.jpg" alt="Comunidad CUC">
+                            <div class="carousel-caption">
+                                <h3>Comunidad Académica CUC</h3>
+                                <p>El talento joven que impulsa la ciencia y la innovación en nuestra región.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control prev" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="carousel-control next" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRAMA DEL EVENTO -->
+        <section id="programa" class="section">
+            <div class="container">
+                <h2 class="section-title">Programa del Evento</h2>
+
+                <div class="program-container reveal">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="dia1">Día 1 (29 Abril)</button>
+                        <button class="tab-btn" data-tab="dia2">Día 2 (30 Abril)</button>
+                    </div>
+
+                    <div class="tab-content active" id="dia1">
+                        <div class="schedule-item">
+                            <div class="time">09:00 AM</div>
+                            <div class="event">Conferencia Inaugural</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">11:30 AM</div>
+                            <div class="event">Taller de IA</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">02:00 PM</div>
+                            <div class="event">Sesión de Networking</div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="dia2">
+                        <div class="schedule-item">
+                            <div class="time">09:00 AM</div>
+                            <div class="event">Masterclass: Inteligencia Artificial en Educación</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">11:00 AM</div>
+                            <div class="event">Foro de Innovación Social</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">02:00 PM</div>
+                            <div class="event">Panel de Expertos: Futuro Digital</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time">04:00 PM</div>
+                            <div class="event">Clausura del Seminario</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSCRIPCIÓN -->
+        <section id="inscripcion" class="section inscription-section">
+            <div class="container flex-row">
+                <div class="inscription-form-wrapper reveal">
+                    <h2 class="section-title title-white">Inscripción al Seminario</h2>
+                    <form id="registerForm" class="form-clean">
+                        <div class="form-group row">
+                            <label>Nombre</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group row">
+                            <label>Email</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group row">
+                            <label>Universidad</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group row participant-type">
+                            <label>Tipo de Participante</label>
+                            <div class="radio-group">
+                                <label class="radio-btn active">
+                                    <input type="radio" name="tipo" value="estudiante" checked> Estudiante
+                                </label>
+                                <label class="radio-btn">
+                                    <input type="radio" name="tipo" value="profesional"> Profesional
+                                </label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary full-width mt-3">Completar Registro</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ORGANIZADORES -->
+        <section id="organizadores" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Organizadores</h2>
+                <p class="section-subtitle">Instituciones que hacen posible este encuentro académico.</p>
+                <div class="organizers-grid">
+                    <div class="organizer-logo reveal">
+                        <img src="assets/images/logo_utp.jpg" alt="Universidad Tecnológica del Perú">
+                    </div>
+                    <div class="organizer-logo reveal delay-1">
+                        <img src="assets/images/logo_uqroo.jpg" alt="Universidad Autónoma del Estado de Quintana Roo">
+                    </div>
+                    <div class="organizer-logo reveal delay-2">
+                        <img src="assets/images/logo_cuc_red.png" alt="Universidad de la Costa">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container text-center">
+                <p>&copy; 2026 Universidad de la Costa (CUC). Seminario Virtual de Innovación.</p>
+                <p style="margin-top: 10px; font-weight: 500; color: #fff;"> By Andres Verbel</p>
+            </div>
+        </footer>
+
+    </div> <!-- END LANDING VIEW -->
+
+    <!-- LOGIN OVERLAY / MODAL -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="login-card">
+            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="login-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h2>CUC</h2>
+            </div>
+            <h3>Bienvenido al Seminario CUC</h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" value="andres@cuc.edu.co" required>
+                </div>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" value="********" required>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Iniciar Sesión</button>
+            </form>
+            <p class="login-footer">¿No tienes cuenta? <a href="#inscripcion" id="linkRegistrarse">Registrarse</a></p>
+        </div>
+    </div>
+
+    <!-- DASHBOARD VIEW (Hidden by default) -->
+    <div id="dashboardView" class="dashboard hidden">
+        <header class="dashboard-header">
+            <div class="container dash-nav">
+                <h2>Bienvenido, Andrés</h2>
+                <div class="dash-icons">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-hero">
+            <img src="assets/images/hero_bg.jpg" alt="Campus">
+            <div class="dashboard-logo-center">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>CUC</h3>
+            </div>
+        </div>
+
+        <div class="container dashboard-grid">
+            <!-- Sidebar widgets -->
+            <aside class="dash-sidebar">
+                <div class="dash-widget glass-dark">
+                    <h3>Mi Agenda</h3>
+                    <ul class="agenda-list">
+                        <li>
+                            <span class="time">10:00 AM</span>
+                            <span class="event">Conferencia sobre IA</span>
+                        </li>
+                        <li>
+                            <span class="time">02:00 PM</span>
+                            <span class="event">Taller de Logística</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dash-widget glass-dark">
+                    <h3>Mi Inscripción</h3>
+                    <p class="status-row">Estado: <span class="badge badge-warning">Confirmada</span></p>
+                    <div class="action-buttons">
+                        <button class="btn btn-outline-light btn-sm"><i class="fa-solid fa-download"></i>
+                            Descargar</button>
+                        <button class="btn btn-primary btn-sm">Certificado PDF</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main widgets -->
+            <main class="dash-main">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-file-contract display-icon"></i>
+                        <h4>Certificado Digital</h4>
+                        <p>Disponible post-evento</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-users display-icon"></i>
+                        <h4>Networking Académico</h4>
+                        <p>Conecta con ponentes</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-book-open display-icon"></i>
+                        <h4>Publicaciones Científicas</h4>
+                        <p>Ver memorias</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- ARTICLE DETAIL MODAL -->
+    <div id="articleModal" class="modal-overlay article-detail-modal">
+        <div class="article-modal-card">
+            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div id="articleModalContent">
+                <!-- Content will be injected by JS -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary close-article-modal">Cerrar Lectura</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN JS -->
+    <script src="main.js"></script>
+</body>
+
+</html>
