@@ -96,6 +96,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // NAV HIGHLIGHT
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const navBarContent = document.querySelector('.nav-content');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    // Create Mobile Toggle
+    const menuToggle = document.createElement('button');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    if (navBarContent && navLinksContainer) {
+        navBarContent.insertBefore(menuToggle, navLinksContainer);
+    }
+
+    menuToggle.addEventListener('click', () => {
+        navLinksContainer.classList.toggle('nav-active');
+        menuToggle.innerHTML = navLinksContainer.classList.contains('nav-active') 
+            ? '<i class="fa-solid fa-xmark"></i>' 
+            : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    // Close menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinksContainer.classList.remove('nav-active');
+            menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        });
+    });
 
     window.addEventListener('scroll', () => {
         let current = '';
@@ -174,6 +199,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>La investigación no debe ocurrir aislada en laboratorios; su verdadero valor se mide por el impacto tangible en la calidad de vida de las comunidades. Este es el núcleo de nuestra investigación social.</p>
                 <p>A través de proyectos participativos en barrios locales, hemos implementado estrategias de innovación social que combinan la tecnología digital con la sabiduría comunitaria ancestral. Esto ha permitido mejorar el acceso a servicios básicos mediante aplicaciones de autogestión vecinal.</p>
                 <p>Nuestros sociólogos e investigadores educativos están documentando cómo este modelo colaborativo está reduciendo la deserción escolar y fomentando el emprendimiento juvenil en zonas de vulnerabilidad socioeconómica.</p>
+            `
+        },
+        utp: {
+            content: `
+                <span class="modal-category">Tecnología Industrial</span>
+                <span class="research-group">Grupo de Investigación en Tecnologías Emergentes (GITE-UTP)</span>
+                <h2>Optimización Industrial mediante IoT</h2>
+                <img src="assets/images/article_utp.png" alt="Ingeniería UTP">
+                <p>La Universidad Tecnológica del Perú (UTP) está liderando proyectos de transformación digital enfocados en la competitividad de las pequeñas y medianas empresas (PYMES). Este estudio presenta un modelo escalable de Internet de las Cosas (IoT) para el monitoreo de eficiencia energética y desgaste de maquinaria.</p>
+                <p>Mediante la instalación de sensores de bajo costo y una plataforma de análisis en la nube desarrollada por nuestros ingenieros, hemos logrado reducir los costos de mantenimiento preventivo en un 22% en diversas plantas metalmecánicas en Lima y Callao.</p>
+                <p>El proyecto no solo se enfoca en el hardware, sino en la capacitación de los operarios para interpretar datos en tiempo real, cerrando la brecha entre la alta tecnología y la operatividad diaria en la industria peruana.</p>
+            `
+        },
+        uqroo: {
+            content: `
+                <span class="modal-category">Conservación Marina</span>
+                <span class="research-group">Cuerpo Académico Sistemas Arrecifales (UQROO)</span>
+                <h2>Monitoreo Biológico del Arrecife Maya</h2>
+                <img src="assets/images/article_uqroo.png" alt="Ambiente UQROO">
+                <p>El Gran Arrecife Maya es uno de los ecosistemas más biodiversos y vulnerables del planeta. Investigadores de la Universidad Autónoma del Estado de Quintana Roo (UQROO) presentan este estudio longitudinal sobre el blanqueamiento coralino en el Caribe Mexicano.</p>
+                <p>Utilizando fotogrametría submarina y análisis químico del agua, nuestro equipo ha documentado la resiliencia de ciertas especies de coral ante el incremento de la temperatura oceánica en las zonas protegidas de Cozumel y Mahahual.</p>
+                <p>Los hallazgos sugieren que las políticas de exclusión de turismo masivo en áreas críticas han permitido una recuperación parcial de la simbiosis de los corales, proporcionando una hoja de ruta para la gestión sustentable de los recursos marinos en toda la región.</p>
             `
         }
     };

@@ -11,8 +11,6 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
 
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,12 +48,29 @@
                 <img src="assets/images/hero_bg.jpg" alt="CUC Campus Background">
                 <div class="hero-overlay"></div>
             </div>
-            <div class="container hero-content">
-                <h1 class="animate-up">Seminario Virtual<br>de Investigación<br>CUC 2026</h1>
-                <p class="hero-subtitle animate-up delay-1">29 y 30 de Abril, 2026 | Modalidad Virtual</p>
-                <div class="hero-buttons animate-up delay-2">
-                    <a href="#inscripcion" class="btn btn-primary">Inscribirse Ahora</a>
-                    <a href="#articulos" class="btn btn-secondary">Explorar Artículos</a>
+            <div class="container hero-container-flex">
+                <div class="hero-content">
+                    <h1 class="animate-up">Seminario Virtual<br>de Investigación<br>CUC 2026</h1>
+                    <p class="hero-subtitle animate-up delay-1">29 y 30 de Abril, 2026 | Modalidad Virtual</p>
+                    <div class="hero-buttons animate-up delay-2">
+                        <a href="#inscripcion" class="btn btn-primary">Inscribirse Ahora</a>
+                        <a href="#articulos" class="btn btn-secondary">Explorar Artículos</a>
+                    </div>
+                </div>
+                
+                <div class="hero-stats animate-up delay-2">
+                    <div class="stat">
+                        <span class="stat-number">+200</span>
+                        <span class="stat-label">Investigadores</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Universidades</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Días de Contenido</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -122,6 +137,30 @@
                             <span class="research-group">G.I. Educación y Sociedad (GIES)</span>
                             <h3>Impacto Social de la Ciencia</h3>
                             <p>Estudios sobre cómo la investigación universitaria reduce brechas de desigualdad...</p>
+                            <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="article-card reveal" data-article="utp">
+                        <div class="article-img">
+                            <img src="assets/images/article_utp.png" alt="Optimización IoT">
+                        </div>
+                        <div class="article-body">
+                            <span class="category">Ingeniería</span>
+                            <span class="research-group">G.I. Tecnologías Emergentes (GITE-UTP)</span>
+                            <h3>Optimización Industrial mediante IoT</h3>
+                            <p>Implementación de sensores inteligentes para reducción de costos operativos en pymes...</p>
+                            <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="article-card reveal delay-1" data-article="uqroo">
+                        <div class="article-img">
+                            <img src="assets/images/article_uqroo.png" alt="Monitoreo Arrecife">
+                        </div>
+                        <div class="article-body">
+                            <span class="category">Ciencias Ambientales</span>
+                            <span class="research-group">Cuerpo Académico Sistemas Arrecifales (UQROO)</span>
+                            <h3>Monitoreo Biológico del Arrecife Maya</h3>
+                            <p>Impacto del cambio climático en la simbiosis coralina en el Caribe Mexicano...</p>
                             <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </article>
@@ -252,6 +291,33 @@
                         </div>
                         <button type="button" class="btn btn-primary full-width mt-3">Completar Registro</button>
                     </form>
+                </div>
+
+                <div class="inscription-benefits reveal delay-1">
+                    <h3>¿Por qué asistir?</h3>
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fa-solid fa-certificate"></i>
+                            <div>
+                                <strong>Certificación Oficial</strong>
+                                <p>Recibe un certificado avalado por la Universidad de la Costa.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-network-wired"></i>
+                            <div>
+                                <strong>Networking Académico</strong>
+                                <p>Conecta con investigadores de 3 universidades internacionales.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-file-powerpoint"></i>
+                            <div>
+                                <strong>Acceso a Memorias</strong>
+                                <p>Descarga todo el material de las ponencias y talleres.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
