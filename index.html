@@ -15,8 +15,14 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo_seminario.png">
+    <link rel="shortcut icon" type="image/png" href="assets/images/logo_seminario.png">
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
@@ -25,13 +31,15 @@
     <header class="navbar">
         <div class="container nav-content">
             <div class="logo">
-                <img src="assets/images/logo_cuc.png" alt="Logo CUC" class="logo-img">
+                <img src="assets/images/logo_seminario.png" alt="Logo Seminario CUC" class="logo-img">
                 <div class="logo-text">
                 </div>
             </div>
             <nav class="nav-links">
                 <a href="#hero" class="active">Inicio</a>
-                <a href="#programa">Programa</a>
+                <a href="#que-es">¿Qué es?</a>
+                <a href="#organizadores">Organizadores</a>
+                <a href="#expositores">Expositores</a>
                 <a href="#articulos">Artículos</a>
                 <a href="#galeria">Galería</a>
                 <button id="navLoginBtn" class="login-btn">Login</button>
@@ -44,55 +52,299 @@
 
         <!-- HERO SECTION -->
         <section id="hero" class="hero">
-            <div class="hero-bg">
-                <img src="assets/images/hero_bg.jpg" alt="CUC Campus Background">
-                <div class="hero-overlay"></div>
-            </div>
+            <div class="mesh-gradient"></div>
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            
             <div class="container hero-container-flex">
-                <div class="hero-content">
-                    <h1 class="animate-up">Seminario Virtual<br>de Investigación<br>CUC 2026</h1>
-                    <p class="hero-subtitle animate-up delay-1">29 y 30 de Abril, 2026 | Modalidad Virtual</p>
-                    <div class="hero-buttons animate-up delay-2">
+                <div class="hero-content glass-card animate-up">
+                    <span class="event-tag">Seminario Internacional CUC 2026</span>
+                    <h1>Investigación<br><span class="text-accent">Latinoamericana</span></h1>
+                    <p class="hero-subtitle">Conectando mentes brillantes para transformar el futuro de la ciencia y la tecnología en la región.</p>
+                    <div class="hero-buttons">
                         <a href="#inscripcion" class="btn btn-primary">Inscribirse Ahora</a>
-                        <a href="#articulos" class="btn btn-secondary">Explorar Artículos</a>
+                        <a href="#articulos" class="btn btn-glass">Explorar Memorias</a>
                     </div>
                 </div>
                 
-                <div class="hero-stats animate-up delay-2">
+                <div class="hero-flyer-card animate-up delay-1">
+                    <div class="glass-container">
+                        <img src="assets/images/hero_bg.png" alt="Flyer Seminario" class="flyer-img">
+                        <div class="glass-reflection"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-stats-bar animate-up delay-2">
+                <div class="container stats-flex">
                     <div class="stat">
                         <span class="stat-number">+200</span>
                         <span class="stat-label">Investigadores</span>
                     </div>
+                    <div class="stat-divider"></div>
                     <div class="stat">
                         <span class="stat-number">3</span>
                         <span class="stat-label">Universidades</span>
                     </div>
+                    <div class="stat-divider"></div>
                     <div class="stat">
-                        <span class="stat-number">2</span>
-                        <span class="stat-label">Días de Contenido</span>
+                        <span class="stat-number">27-28</span>
+                        <span class="stat-label">Mayo 2026</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SOBRE EL CONGRESO -->
-        <section id="sobre" class="section">
+        <!-- ¿QUÉ ES? -->
+        <section id="que-es" class="section">
             <div class="container">
-                <h2 class="section-title">Sobre el Congreso</h2>
-                <p class="section-subtitle">El evento académico sobre innovación tecnológica.</p>
+                <h2 class="section-title">¿Qué es el Seminario?</h2>
+                <p class="section-subtitle">Un espacio académico internacional para la ciencia, la innovación y la colaboración.</p>
 
-                <div class="cards-grid">
-                    <div class="card theme-card reveal">
-                        <i class="fa-solid fa-graduation-cap theme-icon"></i>
-                        <span>Educación Virtual</span>
+                <!-- Descripción principal -->
+                <div class="que-es-intro reveal">
+                    <div class="que-es-text">
+                        <span class="event-tag" style="color: var(--primary-color); background: rgba(154,27,34,0.08); border-color: rgba(154,27,34,0.2);">III Edición &mdash; Mayo 2026</span>
+                        <h3>Un encuentro que transforma la investigación latinoamericana</h3>
+                        <p>El <strong>III Seminario Internacional de Investigación Latinoamericano</strong> es un evento académico de alcance regional, organizado por la <strong>Universidad de la Costa (CUC)</strong>, en alianza con la <strong>Universidad Tecnológica del Perú (UTP)</strong> y la <strong>Universidad Autónoma del Estado de Quintana Roo (UQROO)</strong>.</p>
+                        <p>Su objetivo es construir un espacio de diálogo científico donde investigadores, docentes, profesionales y estudiantes de América Latina compartan hallazgos, metodologías y visiones para impulsar el desarrollo sostenible y la innovación en la región.</p>
+                        <a href="#inscripcion" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;">Inscribirse Ahora &rarr;</a>
                     </div>
-                    <div class="card theme-card reveal delay-1">
-                        <i class="fa-solid fa-microchip theme-icon"></i>
-                        <span>Nuevas Tecnologías</span>
+                    <div class="que-es-visual">
+                        <div class="que-es-badge">
+                            <div class="badge-ring">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <div class="badge-stats">
+                                <div class="mini-stat">
+                                    <span class="mini-number">3</span>
+                                    <span class="mini-label">Países</span>
+                                </div>
+                                <div class="mini-stat">
+                                    <span class="mini-number">+200</span>
+                                    <span class="mini-label">Investigadores</span>
+                                </div>
+                                <div class="mini-stat">
+                                    <span class="mini-number">100%</span>
+                                    <span class="mini-label">Remoto</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card theme-card reveal delay-2">
-                        <i class="fa-solid fa-lightbulb theme-icon"></i>
-                        <span>Innovación Social</span>
+                </div>
+
+                <!-- Ejes temáticos -->
+                <h3 class="temas-titulo reveal">Ejes Temáticos</h3>
+                <div class="temas-grid">
+                    <div class="tema-card reveal">
+                        <div class="tema-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h4>Talento Humano y Neurociencias Empresariales</h4>
+                        <p>Aplicación de las neurociencias para potenciar el liderazgo, el bienestar y el rendimiento en las organizaciones.</p>
+                    </div>
+                    <div class="tema-card reveal delay-1">
+                        <div class="tema-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <h4>Responsabilidad Social</h4>
+                        <p>Estrategias empresariales éticas y de impacto comunitario en la era de la transformación digital.</p>
+                    </div>
+                    <div class="tema-card reveal delay-2">
+                        <div class="tema-icon"><i class="fa-solid fa-leaf"></i></div>
+                        <h4>Sostenibilidad y Turismo</h4>
+                        <p>Modelos de desarrollo turístico sostenible, conservación del patrimonio y gestión ambiental responsable.</p>
+                    </div>
+                    <div class="tema-card reveal">
+                        <div class="tema-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <h4>Emprendimiento e Innovación</h4>
+                        <p>Ecosistemas de innovación, metodologías ágiles y modelos de incubación de startups tecnológicas.</p>
+                    </div>
+                </div>
+
+                <!-- Modalidad y datos clave -->
+                <div class="modalidad-bar reveal">
+                    <div class="modalidad-item">
+                        <i class="fa-solid fa-video"></i>
+                        <div>
+                            <strong>Modalidad</strong>
+                            <span>100% Remota &mdash; En línea</span>
+                        </div>
+                    </div>
+                    <div class="modalidad-divider"></div>
+                    <div class="modalidad-item">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <div>
+                            <strong>Fechas</strong>
+                            <span>27 y 28 de Mayo, 2026</span>
+                        </div>
+                    </div>
+                    <div class="modalidad-divider"></div>
+                    <div class="modalidad-item">
+                        <i class="fa-solid fa-certificate"></i>
+                        <div>
+                            <strong>Certificación</strong>
+                            <span>Oficial avalada por CUC</span>
+                        </div>
+                    </div>
+                    <div class="modalidad-divider"></div>
+                    <div class="modalidad-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>Coordinación</strong>
+                            <span>dmendoza32@cuc.edu.co</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ORGANIZADORES -->
+        <section id="organizadores" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Organizadores</h2>
+                <p class="section-subtitle">Instituciones que hacen posible este encuentro académico.</p>
+                <div class="organizers-grid">
+                    <div class="organizer-logo reveal">
+                        <img src="assets/images/logo_utp.jpg" alt="Universidad Tecnológica del Perú">
+                    </div>
+                    <div class="organizer-logo reveal delay-1">
+                        <img src="assets/images/logo_uqroo.jpg" alt="Universidad Autónoma del Estado de Quintana Roo">
+                    </div>
+                    <div class="organizer-logo reveal delay-2">
+                        <img src="assets/images/logo_cuc_red.png" alt="Universidad de la Costa">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPOSITORES MARQUEE -->
+        <!-- EXPOSITORES -->
+        <section id="expositores" class="section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Expositores</h2>
+                <p class="section-subtitle">Conoce a los expertos que liderarán las conferencias de nuestro seminario.</p>
+                <div class="expositores-grid">
+                    <!-- FEATURED SPEAKER 1 -->
+                    <div class="expositor-card featured reveal">
+                        <div class="inst-badge">Invitado Especial</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Nelson%20David%20Lay%20Raby.jpg" alt="Nelson David Lay Raby" style="object-position: center 15%;">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Nelson David Lay Raby</h3>
+                            <span class="expositor-rol">Conferencista Internacional</span>
+                        </div>
+                    </div>
+
+                    <div class="expositor-card reveal delay-1">
+                        <div class="inst-badge">UQROO</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Angelica%20Mata%20Cardenas.jpg" alt="Angelica Mata Cardenas">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Angelica Mata Cardenas</h3>
+                            <span class="expositor-rol">Investigadora</span>
+                        </div>
+                    </div>
+
+                    <div class="expositor-card reveal delay-2">
+                        <div class="inst-badge">UQROO</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Christina%20Elizabeth%20McCoy%20Cador.png" alt="Christina Elizabeth McCoy Cador">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Christina Elizabeth McCoy Cador</h3>
+                            <span class="expositor-rol">Docente Investigadora</span>
+                        </div>
+                    </div>
+
+                    <!-- FEATURED SPEAKER 2 -->
+                    <div class="expositor-card featured reveal">
+                        <div class="inst-badge">CUC</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Diva%20licet%20mendoza%20ocasal.png" alt="Diva Licet Mendoza Ocasal">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Diva Licet Mendoza Ocasal</h3>
+                            <span class="expositor-rol">Coordinadora Académica</span>
+                        </div>
+                    </div>
+
+                    <div class="expositor-card reveal delay-1">
+                        <div class="inst-badge">UTP</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Reynier%20Israel%20%20Ram%C3%ADrez%20Molina.png" alt="Reynier Israel Ramírez Molina">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Reynier Israel Ramírez Molina</h3>
+                            <span class="expositor-rol">Especialista Invitado</span>
+                        </div>
+                    </div>
+
+                    <div class="expositor-card reveal delay-2">
+                        <div class="inst-badge">UQROO</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Gabriela%20morales.jpg" alt="Gabriela Morales">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Gabriela Morales</h3>
+                            <span class="expositor-rol">Investigadora</span>
+                        </div>
+                    </div>
+
+                    <div class="expositor-card reveal">
+                        <div class="inst-badge">UQROO</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Ivette%20Medina%20Mata.jpg" alt="Ivette Medina Mata">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Ivette Medina Mata</h3>
+                            <span class="expositor-rol">Especialista</span>
+                        </div>
+                    </div>
+
+                    <div class="expositor-card reveal delay-1">
+                        <div class="inst-badge">UQROO</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Juan%20loria.jpg" alt="Juan Loria">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Juan Loria</h3>
+                            <span class="expositor-rol">Investigador</span>
+                        </div>
+                    </div>
+
+                    <!-- FEATURED SPEAKER 3 -->
+                    <div class="expositor-card featured reveal delay-2">
+                        <div class="inst-badge">Invitada Especial</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Silvia%20Lourdes%20Vidal%20Taboada.png" alt="Silvia Lourdes Vidal Taboada">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Silvia Lourdes Vidal Taboada</h3>
+                            <span class="expositor-rol">Conferencista</span>
+                        </div>
+                    </div>
+
+                    <div class="expositor-card reveal">
+                        <div class="inst-badge">UQROO</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Karina%20Vázquez%20Jiménez.jpg" alt="Karina Vázquez Jiménez">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Karina Vázquez Jiménez</h3>
+                            <span class="expositor-rol">Investigadora</span>
+                        </div>
+                    </div>
+
+                    <div class="expositor-card reveal delay-1">
+                        <div class="inst-badge">UQROO</div>
+                        <div class="expositor-img">
+                            <img src="assets/images/Rosa%20Isela%20Fernández%20Xicotencatl.png" alt="Rosa Isela Fernández Xicotencatl">
+                        </div>
+                        <div class="expositor-info">
+                            <h3>Rosa Isela Fernández Xicotencatl</h3>
+                            <span class="expositor-rol">Docente</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,63 +356,51 @@
                 <h2 class="section-title">Artículos de Interés</h2>
                 <p class="section-subtitle">Explora las últimas tendencias en academia e investigación.</p>
                 <div class="articles-grid">
-                    <article class="article-card reveal" data-article="salud">
+                    <article class="article-card reveal" data-article="talento">
                         <div class="article-img">
-                            <img src="assets/images/article_neuro.png" alt="Investigación Neurociencia">
+                            <img src="assets/images/article_real_neuro.png" alt="Talento Humano">
                         </div>
                         <div class="article-body">
-                            <span class="category">Salud</span>
-                            <span class="research-group">G.I. Neurociencias (GINE)</span>
-                            <h3>Fronteras de la Neurociencia</h3>
-                            <p>Explorando los misterios del cerebro humano a través de mapeo neuronal y neuroplasticidad avanzada...</p>
+                            <span class="category">Recursos Humanos</span>
+                            <span class="research-group">G.I. Innovación Organizacional (CUC)</span>
+                            <h3>Neurociencias en la Gestión del Talento</h3>
+                            <p>Aplicación de herramientas neurocientíficas para potenciar el desempeño y bienestar empresarial...</p>
                             <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </article>
-                    <article class="article-card reveal delay-1" data-article="ingenieria">
+                    <article class="article-card reveal delay-1" data-article="social">
                         <div class="article-img">
-                            <img src="assets/images/article2.png" alt="Energías Renovables">
+                            <img src="assets/images/article_real_social.png" alt="Responsabilidad Social">
                         </div>
                         <div class="article-body">
-                            <span class="category">Ingeniería</span>
-                            <span class="research-group">G.I. Energía (GIEN)</span>
-                            <h3>Energías Renovables en el Caribe</h3>
-                            <p>Optimización de parques eólicos offshore y eficiencia solar en climas costeros...</p>
+                            <span class="category">Sociedad</span>
+                            <span class="research-group">G.I. Ética y Negocios (UTP)</span>
+                            <h3>Responsabilidad Social en la Era Digital</h3>
+                            <p>Estrategias de impacto social y ético empresarial para el ecosistema corporativo de hoy en día...</p>
                             <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </article>
-                    <article class="article-card reveal delay-2" data-article="sociales">
+                    <article class="article-card reveal delay-2" data-article="turismo">
                         <div class="article-img">
-                            <img src="assets/images/article3.png" alt="Impacto Social">
+                            <img src="assets/images/article_real_turismo.png" alt="Sostenibilidad y Turismo">
                         </div>
                         <div class="article-body">
-                            <span class="category">Ciencias Sociales</span>
-                            <span class="research-group">G.I. Educación y Sociedad (GIES)</span>
-                            <h3>Impacto Social de la Ciencia</h3>
-                            <p>Estudios sobre cómo la investigación universitaria reduce brechas de desigualdad...</p>
+                            <span class="category">Sostenibilidad</span>
+                            <span class="research-group">Cuerpo Académico Turismo Sostenible (UQROO)</span>
+                            <h3>Ecoturismo y Conservación del Patrimonio</h3>
+                            <p>Modelos de desarrollo turístico sostenible para la protección de la biodiversidad latinoamericana...</p>
                             <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </article>
-                    <article class="article-card reveal" data-article="utp">
+                    <article class="article-card reveal" data-article="emprendimiento">
                         <div class="article-img">
-                            <img src="assets/images/article_utp.png" alt="Optimización IoT">
+                            <img src="assets/images/article_real_innovacion.png" alt="Emprendimiento e Innovación">
                         </div>
                         <div class="article-body">
-                            <span class="category">Ingeniería</span>
-                            <span class="research-group">G.I. Tecnologías Emergentes (GITE-UTP)</span>
-                            <h3>Optimización Industrial mediante IoT</h3>
-                            <p>Implementación de sensores inteligentes para reducción de costos operativos en pymes...</p>
-                            <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </article>
-                    <article class="article-card reveal delay-1" data-article="uqroo">
-                        <div class="article-img">
-                            <img src="assets/images/article_uqroo.png" alt="Monitoreo Arrecife">
-                        </div>
-                        <div class="article-body">
-                            <span class="category">Ciencias Ambientales</span>
-                            <span class="research-group">Cuerpo Académico Sistemas Arrecifales (UQROO)</span>
-                            <h3>Monitoreo Biológico del Arrecife Maya</h3>
-                            <p>Impacto del cambio climático en la simbiosis coralina en el Caribe Mexicano...</p>
+                            <span class="category">Innovación</span>
+                            <span class="research-group">G.I. Emprendimiento (CUC - UTP)</span>
+                            <h3>Ecosistemas de Emprendimiento Tecnológico</h3>
+                            <p>Análisis de dinámicas de innovación y metodologías de incubación de startups emergentes...</p>
                             <a href="javascript:void(0)" class="read-more">Leer más <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </article>
@@ -177,28 +417,28 @@
                 <div class="carousel-container reveal">
                     <div class="carousel-slider" id="carouselSlider">
                         <div class="carousel-item active">
-                            <img src="assets/images/gallery_new1.jpg" alt="Sesión de Trabajo">
+                            <img src="assets/gallery/gallery_new1.jpg" alt="Sesión de Trabajo">
                             <div class="carousel-caption">
                                 <h3>Sesión de Trabajo Colaborativo</h3>
                                 <p>Investigadores y estudiantes compartiendo hallazgos en tiempo real.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/gallery_new2.jpg" alt="Entrega de Reconocimientos" class="object-top">
+                            <img src="assets/gallery/gallery_new2.jpg" alt="Entrega de Reconocimientos" class="object-top">
                             <div class="carousel-caption">
                                 <h3>Reconocimiento a la Excelencia</h3>
                                 <p>Ceremonia de entrega de constancias por logros académicos destacados.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/gallery_new3.jpg" alt="Alianzas Internacionales">
+                            <img src="assets/gallery/gallery_new3.jpg" alt="Alianzas Internacionales">
                             <div class="carousel-caption">
                                 <h3>Alianzas Institucionales</h3>
                                 <p>Colaboración estrecha con la Universidad Autónoma del Estado de Quintana Roo.</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/gallery_new4.jpg" alt="Comunidad CUC">
+                            <img src="assets/gallery/gallery_new4.jpg" alt="Comunidad CUC">
                             <div class="carousel-caption">
                                 <h3>Comunidad Académica CUC</h3>
                                 <p>El talento joven que impulsa la ciencia y la innovación en nuestra región.</p>
@@ -212,54 +452,6 @@
             </div>
         </section>
 
-        <!-- PROGRAMA DEL EVENTO -->
-        <section id="programa" class="section">
-            <div class="container">
-                <h2 class="section-title">Programa del Evento</h2>
-
-                <div class="program-container reveal">
-                    <div class="tabs">
-                        <button class="tab-btn active" data-tab="dia1">Día 1 (29 Abril)</button>
-                        <button class="tab-btn" data-tab="dia2">Día 2 (30 Abril)</button>
-                    </div>
-
-                    <div class="tab-content active" id="dia1">
-                        <div class="schedule-item">
-                            <div class="time">09:00 AM</div>
-                            <div class="event">Conferencia Inaugural</div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="time">11:30 AM</div>
-                            <div class="event">Taller de IA</div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="time">02:00 PM</div>
-                            <div class="event">Sesión de Networking</div>
-                        </div>
-                    </div>
-
-                    <div class="tab-content" id="dia2">
-                        <div class="schedule-item">
-                            <div class="time">09:00 AM</div>
-                            <div class="event">Masterclass: Inteligencia Artificial en Educación</div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="time">11:00 AM</div>
-                            <div class="event">Foro de Innovación Social</div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="time">02:00 PM</div>
-                            <div class="event">Panel de Expertos: Futuro Digital</div>
-                        </div>
-                        <div class="schedule-item">
-                            <div class="time">04:00 PM</div>
-                            <div class="event">Clausura del Seminario</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- INSCRIPCIÓN -->
         <section id="inscripcion" class="section inscription-section">
             <div class="container flex-row">
@@ -267,16 +459,16 @@
                     <h2 class="section-title title-white">Inscripción al Seminario</h2>
                     <form id="registerForm" class="form-clean">
                         <div class="form-group row">
-                            <label>Nombre</label>
-                            <input type="text" required>
+                            <label for="inputNombre">Nombre</label>
+                            <input id="inputNombre" type="text" placeholder="Tu nombre completo" required>
                         </div>
                         <div class="form-group row">
-                            <label>Email</label>
-                            <input type="email" required>
+                            <label for="inputEmail">Email</label>
+                            <input id="inputEmail" type="email" placeholder="correo@ejemplo.com" required>
                         </div>
                         <div class="form-group row">
-                            <label>Universidad</label>
-                            <input type="text">
+                            <label for="inputUniversidad">Universidad</label>
+                            <input id="inputUniversidad" type="text" placeholder="Tu institución">
                         </div>
                         <div class="form-group row participant-type">
                             <label>Tipo de Participante</label>
@@ -289,7 +481,8 @@
                                 </label>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary full-width mt-3">Completar Registro</button>
+                        <div id="formMessage" style="display:none; padding: 0.75rem 1rem; border-radius: 8px; margin-top: 1rem; font-weight: 600; text-align: center;"></div>
+                        <button id="submitRegisterBtn" type="button" class="btn btn-primary full-width mt-3">Completar Registro</button>
                     </form>
                 </div>
 
@@ -318,25 +511,6 @@
                             </div>
                         </li>
                     </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ORGANIZADORES -->
-        <section id="organizadores" class="section bg-light">
-            <div class="container">
-                <h2 class="section-title">Organizadores</h2>
-                <p class="section-subtitle">Instituciones que hacen posible este encuentro académico.</p>
-                <div class="organizers-grid">
-                    <div class="organizer-logo reveal">
-                        <img src="assets/images/logo_utp.jpg" alt="Universidad Tecnológica del Perú">
-                    </div>
-                    <div class="organizer-logo reveal delay-1">
-                        <img src="assets/images/logo_uqroo.jpg" alt="Universidad Autónoma del Estado de Quintana Roo">
-                    </div>
-                    <div class="organizer-logo reveal delay-2">
-                        <img src="assets/images/logo_cuc_red.png" alt="Universidad de la Costa">
-                    </div>
                 </div>
             </div>
         </section>
@@ -392,7 +566,7 @@
         </header>
 
         <div class="dashboard-hero">
-            <img src="assets/images/hero_bg.jpg" alt="Campus">
+            <img src="assets/images/hero_bg.png" alt="Campus">
             <div class="dashboard-logo-center">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <h3>CUC</h3>
@@ -463,8 +637,12 @@
         </div>
     </div>
 
-    <!-- MAIN JS -->
-    <script src="main.js"></script>
+    <!-- JS Scripts -->
+    <script src="js/carousel.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
