@@ -11,9 +11,9 @@
     .inscription-benefits { text-align: center; max-width: 100%; }
     .benefits-list li { text-align: left; }
     
-    /* Bento Grid Responsive */
-    .expositores-grid { grid-template-columns: repeat(2, 1fr); }
-    .expositor-card.featured { grid-column: span 2; }
+    /* Expositores Carousel Responsive */
+    .expositores-carousel__viewport { margin: 0 40px; }
+    .expositores-carousel__btn { width: 42px; height: 42px; font-size: 0.95rem; }
 }
 
 @media (max-width: 768px) {
@@ -50,10 +50,12 @@
     .modalidad-divider { width: 50px; height: 1px; }
     .modalidad-item { justify-content: center; }
 
-    /* Bento Grid Small Devices */
-    .expositores-grid { 
-        grid-template-columns: 1fr;
-        grid-auto-rows: 400px;
-    }
-    .expositor-card.featured { grid-column: span 1; }
+    /* Expositores Carousel Small Devices */
+    .expositores-carousel { padding: 0; }
+    .expositores-carousel__viewport { margin: 0 35px; border-radius: 16px; }
+    .expositores-carousel__btn { width: 38px; height: 38px; font-size: 0.85rem; }
+    .expositores-carousel__track { gap: 12px; }
+    .expositores-carousel__track .expositor-card { height: 380px; }
+    .expositores-carousel__btn--prev { left: 2px; }
+    .expositores-carousel__btn--next { right: 2px; }
 }
