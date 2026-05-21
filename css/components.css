@@ -1105,6 +1105,105 @@
 
 .modal-external-link { margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1.5rem; text-align: left; }
 
+/* SPEAKER MODAL */
+.speaker-detail-modal .speaker-modal-card {
+    background: white;
+    padding: 0;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 750px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.speaker-detail-modal.active .speaker-modal-card { transform: scale(1); }
+
+#speakerModalContent {
+    overflow-y: auto;
+    color: var(--text-main);
+}
+
+#speakerModalContent .speaker-modal-header {
+    display: flex;
+    gap: 2rem;
+    padding: 2.5rem 2.5rem 1.5rem;
+    align-items: flex-start;
+}
+
+#speakerModalContent .speaker-modal-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 16px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-md);
+}
+
+#speakerModalContent .speaker-modal-head h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+#speakerModalContent .speaker-modal-head .speaker-role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#speakerModalContent .speaker-modal-head .speaker-affiliation {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-top: 0.3rem;
+}
+
+#speakerModalContent .speaker-modal-body {
+    padding: 0 2.5rem 2rem;
+}
+
+#speakerModalContent .speaker-modal-body p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-main);
+}
+
+#speakerModalContent .speaker-modal-body .speaker-research {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 1.2rem 0;
+}
+
+#speakerModalContent .speaker-modal-body .speaker-research span {
+    background: #eef2ff;
+    color: var(--primary-color);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#speakerModalContent .speaker-modal-body .speaker-pub-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+#speakerModalContent .speaker-modal-body .speaker-pub-link:hover {
+    text-decoration: underline;
+}
+
 /* DASHBOARD */
 .dashboard {
     background-color: var(--bg-dark);
