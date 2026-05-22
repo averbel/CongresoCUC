@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const id = (str) => document.getElementById(str);
-    
-    // WEBHOOK REGISTRO
+
     const submitBtn = id('submitRegisterBtn');
     const formMessage = id('formMessage');
     const registerForm = id('registerForm');
@@ -11,45 +10,65 @@ document.addEventListener('DOMContentLoaded', () => {
             const nombre = id('inputNombre').value.trim();
             const email = id('inputEmail').value.trim();
             const universidad = id('inputUniversidad').value.trim();
+            const password = id('inputPassword').value;
             const tipoInput = document.querySelector('input[name="tipo"]:checked');
             const tipo = tipoInput ? tipoInput.value : '';
 
-            // Validaciones básicas
-            if (!nombre || !email) {
-                showFormMessage('Por favor completa los campos obligatorios (Nombre y Email).', 'error');
+            if (!nombre || !email || !password) {
+                showFormMessage('Completa los campos obligatorios: Nombre, Email y Contraseña.', 'error');
+                return;
+            }
+            if (password.length < 6) {
+                showFormMessage('La contraseña debe tener al menos 6 caracteres.', 'error');
                 return;
             }
 
-            const payload = {
-                nombre,
-                email,
-                universidad,
-                tipo_participante: tipo,
-                fecha_registro: new Date().toISOString(),
-                evento: 'III Seminario Internacional de Investigación Latinoamericano 2026'
-            };
-
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
+            submitBtn.textContent = 'Registrando...';
 
             try {
-                const response = await fetch('https://averbel1.app.n8n.cloud/webhook/92d04f58-86da-4b7c-b53d-f94c96280eaa', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                const { data: authData, error: authError } = await supabaseClient.auth.signUp({
+                    email,
+                    password,
+                    options: {
+                        data: { nombre, universidad, tipo_participante: tipo }
+                    }
                 });
 
-                if (response.ok) {
-                    showFormMessage('✅ ¡Registro completado! Te contactaremos pronto.', 'success');
-                    if (registerForm) registerForm.reset();
-                    submitBtn.textContent = 'Completar Registro';
-                    submitBtn.disabled = false;
-                } else {
-                    throw new Error('Error del servidor: ' + response.status);
+                if (authError) {
+                    if (authError.message.includes('already registered')) {
+                        throw new Error('Este email ya está registrado. Inicia sesión.');
+                    }
+                    throw authError;
                 }
+
+                const { error: insertError } = await supabaseClient
+                    .from('registrations')
+                    .insert({
+                        user_id: authData.user.id,
+                        nombre,
+                        email,
+                        universidad,
+                        tipo_participante: tipo,
+                        fecha_registro: new Date().toISOString(),
+                        evento: 'III Seminario Internacional de Investigación Latinoamericano 2026'
+                    });
+
+                if (insertError) throw insertError;
+
+                if (authData.session) {
+                    showFormMessage('Registro completado. Bienvenido!', 'success');
+                } else {
+                    showFormMessage('Registro completado! Revisa tu email para confirmar tu cuenta. Luego inicia sesión.', 'success');
+                }
+
+                if (registerForm) registerForm.reset();
+                submitBtn.textContent = 'Crear Cuenta y Registrarse';
+                submitBtn.disabled = false;
+
             } catch (err) {
-                showFormMessage('❌ Hubo un error al enviar. Inténtalo de nuevo.', 'error');
-                submitBtn.textContent = 'Completar Registro';
+                showFormMessage(err.message || 'Error al registrar. Intenta de nuevo.', 'error');
+                submitBtn.textContent = 'Crear Cuenta y Registrarse';
                 submitBtn.disabled = false;
                 console.error(err);
             }

@@ -15,6 +15,9 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo_seminario.png">
     <link rel="shortcut icon" type="image/png" href="assets/images/logo_seminario.png">
@@ -581,8 +584,12 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="inputPassword">Contraseña</label>
+                            <input id="inputPassword" type="password" placeholder="Mínimo 6 caracteres" required>
+                        </div>
                         <div id="formMessage" style="display:none; padding: 0.75rem 1rem; border-radius: 8px; margin-top: 1rem; font-weight: 600; text-align: center;"></div>
-                        <button id="submitRegisterBtn" type="button" class="btn btn-primary full-width mt-3">Completar Registro</button>
+                        <button id="submitRegisterBtn" type="button" class="btn btn-primary full-width mt-3">Crear Cuenta y Registrarse</button>
                     </form>
                 </div>
 
@@ -637,12 +644,13 @@
             <form id="loginForm">
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" value="andres@cuc.edu.co" required>
+                    <input id="loginEmail" type="email" placeholder="tu@email.com" required>
                 </div>
                 <div class="form-group">
                     <label>Contraseña</label>
-                    <input type="password" value="********" required>
+                    <input id="loginPassword" type="password" placeholder="Tu contraseña" required>
                 </div>
+                <div id="loginMessage" style="display:none; padding: 0.5rem; border-radius: 8px; margin-bottom: 1rem; font-weight: 600; text-align: center; font-size: 0.9rem;"></div>
                 <button type="submit" class="btn btn-primary full-width">Iniciar Sesión</button>
             </form>
             <p class="login-footer">¿No tienes cuenta? <a href="#inscripcion" id="linkRegistrarse">Registrarse</a></p>
@@ -653,13 +661,16 @@
     <div id="dashboardView" class="dashboard hidden">
         <header class="dashboard-header">
             <div class="container dash-nav">
-                <h2>Bienvenido, Andrés</h2>
+                <h2>Bienvenido, <span id="dashUserName">Usuario</span></h2>
                 <div class="dash-icons">
                     <i class="fa-solid fa-calendar-check"></i>
                     <i class="fa-solid fa-envelope"></i>
-                    <div class="user-avatar">
+                    <div class="user-avatar" id="userMenu" style="cursor:pointer; position:relative;">
                         <i class="fa-solid fa-circle-user"></i>
                         <i class="fa-solid fa-caret-down"></i>
+                        <div id="logoutDropdown" style="display:none; position:absolute; top:100%; right:0; background:#1a1a2e; border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.5rem; min-width:140px; z-index:100;">
+                            <button id="logoutBtn" class="btn btn-outline-light btn-sm" style="width:100%;">Cerrar Sesión</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -751,11 +762,13 @@
     </div>
 
     <!-- JS Scripts -->
+    <script src="js/supabase-config.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/expositores-carousel.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/modals.js"></script>
     <script src="js/form.js"></script>
+    <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
 </body>
 
