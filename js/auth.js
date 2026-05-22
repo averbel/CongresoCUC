@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const loginModal = id('loginModal');
     const logoutBtn = id('logoutBtn');
     const userMenu = id('userMenu');
+    const successModal = id('successModal');
+    const goToDashboardBtn = id('goToDashboardBtn');
     const logoutDropdown = id('logoutDropdown');
 
     const { data: { session } } = await supabaseClient.auth.getSession();
@@ -47,6 +49,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                         : err.message
                 );
             }
+        });
+    }
+
+    if (goToDashboardBtn) {
+        goToDashboardBtn.addEventListener('click', () => {
+            if (successModal) successModal.classList.remove('active');
         });
     }
 

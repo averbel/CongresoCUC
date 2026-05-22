@@ -57,12 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (insertError) throw insertError;
 
                 if (authData.session) {
-                    showFormMessage('Registro completado. Bienvenido!', 'success');
+                    showSuccessModal(nombre);
                 } else {
                     showFormMessage('Registro completado! Revisa tu email para confirmar tu cuenta. Luego inicia sesión.', 'success');
+                    if (registerForm) registerForm.reset();
                 }
 
-                if (registerForm) registerForm.reset();
                 submitBtn.textContent = 'Crear Cuenta y Registrarse';
                 submitBtn.disabled = false;
 
@@ -73,6 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error(err);
             }
         });
+    }
+
+    function showSuccessModal(nombre) {
+        const modal = document.getElementById('successModal');
+        const msg = document.getElementById('successMessage');
+        if (modal && msg) {
+            msg.textContent = `Bienvenido, ${nombre}. Tu cuenta ha sido creada correctamente.`;
+            modal.classList.add('active');
+        }
     }
 
     function showFormMessage(msg, type) {
