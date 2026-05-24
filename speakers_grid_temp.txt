@@ -1,2 +1,0 @@
-﻿"                    <div class=\"expositor-card reveal\">\n                        <div class=\"expositor-img\">\n                            <img src=\"assets/images/Nelson%20David%20Lay%20Raby.jpg\" alt=\"Nelson David Lay Raby\">\n                      
-<truncated 5742 bytes>
