@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const id = (str) => document.getElementById(str);
 
+    document.querySelectorAll('.radio-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.radio-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+
     const submitBtn = id('submitRegisterBtn');
     const formMessage = id('formMessage');
     const registerForm = id('registerForm');
