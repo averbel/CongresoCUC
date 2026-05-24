@@ -46,7 +46,7 @@
                 <a href="#articulos">Artículos</a>
                 <a href="#galeria">Galería</a>
                 <a href="conferencia.html">Accede a la Conferencia</a>
-                <button id="navLoginBtn" class="login-btn">Login</button>
+                
             </nav>
         </div>
     </header>
@@ -584,12 +584,8 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="inputPassword">Contraseña</label>
-                            <input id="inputPassword" type="password" placeholder="Mínimo 6 caracteres" required>
-                        </div>
                         <div id="formMessage" style="display:none; padding: 0.75rem 1rem; border-radius: 8px; margin-top: 1rem; font-weight: 600; text-align: center;"></div>
-                        <button id="submitRegisterBtn" type="button" class="btn btn-primary full-width mt-3">Crear Cuenta y Registrarse</button>
+                        <button id="submitRegisterBtn" type="button" class="btn btn-primary full-width mt-3">Inscribirse</button>
                     </form>
                 </div>
 
@@ -632,109 +628,6 @@
 
     </div> <!-- END LANDING VIEW -->
 
-    <!-- LOGIN OVERLAY / MODAL -->
-    <div id="loginModal" class="modal-overlay">
-        <div class="login-card">
-            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
-            <div class="login-logo">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <h2>CUC</h2>
-            </div>
-            <h3>Bienvenido al Seminario CUC</h3>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label>Email</label>
-                    <input id="loginEmail" type="email" placeholder="tu@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Contraseña</label>
-                    <input id="loginPassword" type="password" placeholder="Tu contraseña" required>
-                </div>
-                <div id="loginMessage" style="display:none; padding: 0.5rem; border-radius: 8px; margin-bottom: 1rem; font-weight: 600; text-align: center; font-size: 0.9rem;"></div>
-                <button type="submit" class="btn btn-primary full-width">Iniciar Sesión</button>
-            </form>
-            <p class="login-footer">¿No tienes cuenta? <a href="#inscripcion" id="linkRegistrarse">Registrarse</a></p>
-        </div>
-    </div>
-
-    <!-- DASHBOARD VIEW (Hidden by default) -->
-    <div id="dashboardView" class="dashboard hidden">
-        <header class="dashboard-header">
-            <div class="container dash-nav">
-                <h2>Bienvenido, <span id="dashUserName">Usuario</span></h2>
-                <div class="dash-icons">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    <i class="fa-solid fa-envelope"></i>
-                    <div class="user-avatar" id="userMenu" style="cursor:pointer; position:relative;">
-                        <i class="fa-solid fa-circle-user"></i>
-                        <i class="fa-solid fa-caret-down"></i>
-                        <div id="logoutDropdown" style="display:none; position:absolute; top:100%; right:0; background:#1a1a2e; border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:0.5rem; min-width:140px; z-index:100;">
-                            <button id="logoutBtn" class="btn btn-outline-light btn-sm" style="width:100%;">Cerrar Sesión</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="dashboard-hero">
-            <img src="assets/images/hero_bg.png" alt="Campus">
-            <div class="dashboard-logo-center">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <h3>CUC</h3>
-            </div>
-        </div>
-
-        <div class="container dashboard-grid">
-            <!-- Sidebar widgets -->
-            <aside class="dash-sidebar">
-                <div class="dash-widget glass-dark">
-                    <h3>Mi Agenda</h3>
-                    <ul class="agenda-list">
-                        <li>
-                            <span class="time">10:00 AM</span>
-                            <span class="event">Conferencia sobre IA</span>
-                        </li>
-                        <li>
-                            <span class="time">02:00 PM</span>
-                            <span class="event">Taller de Logística</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="dash-widget glass-dark">
-                    <h3>Mi Inscripción</h3>
-                    <p class="status-row">Estado: <span class="badge badge-warning">Confirmada</span></p>
-                    <div class="action-buttons">
-                        <button class="btn btn-outline-light btn-sm"><i class="fa-solid fa-download"></i>
-                            Descargar</button>
-                        <button class="btn btn-primary btn-sm">Certificado PDF</button>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- Main widgets -->
-            <main class="dash-main">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-file-contract display-icon"></i>
-                        <h4>Certificado Digital</h4>
-                        <p>Disponible post-evento</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fa-solid fa-users display-icon"></i>
-                        <h4>Networking Académico</h4>
-                        <p>Conecta con ponentes</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fa-solid fa-book-open display-icon"></i>
-                        <h4>Publicaciones Científicas</h4>
-                        <p>Ver memorias</p>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
-
     <!-- SPEAKER DETAIL MODAL -->
     <div id="speakerModal" class="modal-overlay speaker-detail-modal">
         <div class="speaker-modal-card">
@@ -761,18 +654,6 @@
         </div>
     </div>
 
-    <!-- SUCCESS MODAL -->
-    <div id="successModal" class="modal-overlay">
-        <div class="login-card success-card">
-            <div class="login-logo">
-                <i class="fa-solid fa-circle-check" style="color: #16a34a; font-size: 3rem;"></i>
-            </div>
-            <h3 style="margin-top: 0;">¡Registro Exitoso!</h3>
-            <p id="successMessage" style="color: #ccc; margin-bottom: 1.5rem;">Tu cuenta ha sido creada correctamente.</p>
-            <button id="goToDashboardBtn" class="btn btn-primary full-width">Ir al Dashboard</button>
-        </div>
-    </div>
-
     <!-- JS Scripts -->
     <script src="js/supabase-config.js"></script>
     <script src="js/carousel.js"></script>
@@ -780,7 +661,6 @@
     <script src="js/nav.js"></script>
     <script src="js/modals.js"></script>
     <script src="js/form.js"></script>
-    <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
 </body>
 

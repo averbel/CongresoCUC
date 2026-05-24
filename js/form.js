@@ -10,16 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const nombre = id('inputNombre').value.trim();
             const email = id('inputEmail').value.trim();
             const universidad = id('inputUniversidad').value.trim();
-            const password = id('inputPassword').value;
             const tipoInput = document.querySelector('input[name="tipo"]:checked');
             const tipo = tipoInput ? tipoInput.value : '';
 
-            if (!nombre || !email || !password) {
-                showFormMessage('Completa los campos obligatorios: Nombre, Email y Contraseña.', 'error');
-                return;
-            }
-            if (password.length < 6) {
-                showFormMessage('La contraseña debe tener al menos 6 caracteres.', 'error');
+            if (!nombre || !email) {
+                showFormMessage('Completa los campos obligatorios: Nombre y Email.', 'error');
                 return;
             }
 
@@ -27,25 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = 'Registrando...';
 
             try {
-                const { data: authData, error: authError } = await supabaseClient.auth.signUp({
-                    email,
-                    password,
-                    options: {
-                        data: { nombre, universidad, tipo_participante: tipo }
-                    }
-                });
-
-                if (authError) {
-                    if (authError.message.includes('already registered')) {
-                        throw new Error('Este email ya está registrado. Inicia sesión.');
-                    }
-                    throw authError;
-                }
-
                 const { error: insertError } = await supabaseClient
                     .from('registrations')
                     .insert({
-                        user_id: authData.user.id,
                         nombre,
                         email,
                         universidad,
@@ -56,32 +35,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (insertError) throw insertError;
 
-                if (authData.session) {
-                    showSuccessModal(nombre);
-                } else {
-                    showFormMessage('Registro completado! Revisa tu email para confirmar tu cuenta. Luego inicia sesión.', 'success');
-                    if (registerForm) registerForm.reset();
-                }
-
-                submitBtn.textContent = 'Crear Cuenta y Registrarse';
+                showFormMessage('¡Inscripción completada con éxito! Te esperamos en el seminario.', 'success');
+                if (registerForm) registerForm.reset();
+                submitBtn.textContent = 'Inscribirse';
                 submitBtn.disabled = false;
 
             } catch (err) {
                 showFormMessage(err.message || 'Error al registrar. Intenta de nuevo.', 'error');
-                submitBtn.textContent = 'Crear Cuenta y Registrarse';
+                submitBtn.textContent = 'Inscribirse';
                 submitBtn.disabled = false;
                 console.error(err);
             }
         });
-    }
-
-    function showSuccessModal(nombre) {
-        const modal = document.getElementById('successModal');
-        const msg = document.getElementById('successMessage');
-        if (modal && msg) {
-            msg.textContent = `Bienvenido, ${nombre}. Tu cuenta ha sido creada correctamente.`;
-            modal.classList.add('active');
-        }
     }
 
     function showFormMessage(msg, type) {

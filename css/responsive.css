@@ -1,7 +1,6 @@
 /* RESPONSIVE QUERIES */
 
 @media (max-width: 992px) {
-    .dashboard-grid { grid-template-columns: 1fr; }
     .hero-content h1 { font-size: 2.8rem; }
     .hero-container-flex { flex-direction: column; text-align: center; gap: 40px; padding: 4rem 0; }
     .hero-content { max-width: 100%; text-align: center; }
@@ -34,7 +33,6 @@
     .nav-links.nav-active { left: 0; }
     .hero-content h1 { font-size: 2.2rem; }
     .stats-flex { flex-direction: column; align-items: center; gap: 15px; }
-    .login-card { padding: 1.5rem; }
     #articleModalContent { padding: 1.5rem; }
     .glass-card { padding: 2rem; max-width: 90vw; }
     .inscription-section { padding: 4rem 0; }

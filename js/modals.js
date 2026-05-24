@@ -1,19 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const id = (str) => document.getElementById(str);
     
-    const loginBtn = id('navLoginBtn');
-    const loginModal = id('loginModal');
     const articleModal = id('articleModal');
     const articleModalContent = id('articleModalContent');
     const speakerModal = id('speakerModal');
     const speakerModalContent = id('speakerModalContent');
     const closeButtons = document.querySelectorAll('.close-modal, .close-article-modal, .close-speaker-modal');
     const modalOverlays = document.querySelectorAll('.modal-overlay');
-
-    // Open Login Modal
-    if (loginBtn && loginModal) {
-        loginBtn.addEventListener('click', () => loginModal.classList.add('active'));
-    }
 
     // Close Modals (Button)
     closeButtons.forEach(btn => {
