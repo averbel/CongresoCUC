@@ -1428,6 +1428,219 @@
     background: rgba(255,255,255,0.15);
 }
 
+/* AGENDA SECTION */
+.agenda-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.agenda-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.agenda-container {
+    margin-top: 3rem;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.agenda-container .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: none;
+    border-bottom: none;
+    margin-bottom: 3rem;
+}
+
+.agenda-container .tab-btn {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: inherit;
+}
+
+.agenda-container .tab-btn i {
+    font-size: 1.15rem;
+}
+
+.agenda-container .tab-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.agenda-container .tab-btn.active {
+    background: rgba(248, 180, 0, 0.12);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 35px rgba(248, 180, 0, 0.12), inset 0 1px 0 rgba(248, 180, 0, 0.15);
+}
+
+.agenda-container .tab-content {
+    display: none;
+    animation: agendaFadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.agenda-container .tab-content.active {
+    display: block;
+}
+
+@keyframes agendaFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.agenda-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.agenda-card {
+    perspective: 1200px;
+}
+
+.agenda-card-inner {
+    position: relative;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+    transform: rotateY(-5deg) rotateX(3deg);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+}
+
+.agenda-card:last-child .agenda-card-inner {
+    transform: rotateY(5deg) rotateX(3deg);
+}
+
+.agenda-card:hover .agenda-card-inner {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.8);
+    border-color: rgba(248, 180, 0, 0.25);
+}
+
+.agenda-card-inner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.agenda-card:hover .agenda-card-inner img {
+    transform: scale(1.04);
+}
+
+.agenda-glass {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 40%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
+    pointer-events: none;
+    border-radius: 24px;
+}
+
+/* AGENDA LIGHTBOX */
+.agenda-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: zoom-out;
+    padding: 2rem;
+}
+
+.agenda-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.agenda-lightbox__img {
+    max-width: 95vw;
+    max-height: 92vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    transform: scale(0.85);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+}
+
+.agenda-lightbox.active .agenda-lightbox__img {
+    transform: scale(1);
+}
+
+.agenda-lightbox__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.agenda-lightbox__close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.agenda-lightbox__caption {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.agenda-card {
+    cursor: pointer;
+}
+
 /* CONFERENCE PAGE */
 .conference-page-hero {
     min-height: 100vh;

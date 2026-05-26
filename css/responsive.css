@@ -48,6 +48,12 @@
     .modalidad-divider { width: 50px; height: 1px; }
     .modalidad-item { justify-content: center; }
 
+    /* Agenda Responsive */
+    .agenda-grid { grid-template-columns: 1fr; gap: 24px; }
+    .agenda-container .tabs { flex-direction: column; align-items: center; gap: 12px; }
+    .agenda-container .tab-btn { width: 100%; max-width: 320px; justify-content: center; }
+    .agenda-card-inner { transform: none !important; }
+
     /* Expositores Carousel Small Devices */
     .expositores-carousel { padding: 0; }
     .expositores-carousel__viewport { margin: 0 35px; border-radius: 16px; }

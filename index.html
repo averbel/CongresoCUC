@@ -38,6 +38,7 @@
             <nav class="nav-links">
                 <a href="#hero" class="active">Inicio</a>
                 <a href="#que-es">¿Qué es?</a>
+                <a href="#agenda">Agenda</a>
                 <a href="#organizadores">Organizadores</a>
                 <a href="#expositores">Expositores</a>
                 <a href="#articulos">Artículos</a>
@@ -195,6 +196,59 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- AGENDA -->
+        <section id="agenda" class="section agenda-section">
+            <div class="container">
+                <h2 class="section-title" style="color: white;">Agenda del Seminario</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Conoce el programa completo de los dos días del evento.</p>
+
+                <div class="program-container agenda-container reveal">
+                    <div class="tabs agenda-tabs">
+                        <button class="tab-btn active" data-tab="day1">
+                            <i class="fa-solid fa-calendar-day"></i> Día 1 · 27 Mayo
+                        </button>
+                        <button class="tab-btn" data-tab="day2">
+                            <i class="fa-solid fa-calendar-day"></i> Día 2 · 28 Mayo
+                        </button>
+                    </div>
+
+                    <div class="tab-content active" id="day1">
+                        <div class="agenda-grid">
+                            <div class="agenda-card">
+                                <div class="agenda-card-inner">
+                                    <img src="assets/images/agenda_dia1_parte1.jpg" alt="Agenda Día 1 - Parte 1">
+                                    <div class="agenda-glass"></div>
+                                </div>
+                            </div>
+                            <div class="agenda-card">
+                                <div class="agenda-card-inner">
+                                    <img src="assets/images/agenda_dia1_parte2.jpg" alt="Agenda Día 1 - Parte 2">
+                                    <div class="agenda-glass"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="day2">
+                        <div class="agenda-grid">
+                            <div class="agenda-card">
+                                <div class="agenda-card-inner">
+                                    <img src="assets/images/agenda_dia2_parte1.jpg" alt="Agenda Día 2 - Parte 1">
+                                    <div class="agenda-glass"></div>
+                                </div>
+                            </div>
+                            <div class="agenda-card">
+                                <div class="agenda-card-inner">
+                                    <img src="assets/images/agenda_dia2_parte2.jpg" alt="Agenda Día 2 - Parte 2">
+                                    <div class="agenda-glass"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -649,6 +703,13 @@
                 <button class="btn btn-secondary close-article-modal">Cerrar Lectura</button>
             </div>
         </div>
+    </div>
+
+    <!-- AGENDA LIGHTBOX -->
+    <div id="agendaLightbox" class="agenda-lightbox">
+        <button class="agenda-lightbox__close"><i class="fa-solid fa-xmark"></i></button>
+        <img class="agenda-lightbox__img" src="" alt="Agenda ampliada">
+        <div class="agenda-lightbox__caption">Haz clic fuera o presiona ESC para cerrar</div>
     </div>
 
     <!-- Supabase JS -->

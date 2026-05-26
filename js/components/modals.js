@@ -306,4 +306,38 @@ export function initModals() {
       speakerModal.classList.add('active');
     });
   });
+
+  // Agenda Lightbox
+  const agendaLightbox = getById('agendaLightbox');
+  const agendaLightboxImg = agendaLightbox?.querySelector('.agenda-lightbox__img');
+  const agendaLightboxClose = agendaLightbox?.querySelector('.agenda-lightbox__close');
+
+  if (agendaLightbox && agendaLightboxImg) {
+    document.querySelectorAll('.agenda-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const img = card.querySelector('img');
+        if (img) {
+          agendaLightboxImg.src = img.src;
+          agendaLightboxImg.alt = img.alt;
+          agendaLightbox.classList.add('active');
+        }
+      });
+    });
+
+    agendaLightboxClose?.addEventListener('click', () => {
+      agendaLightbox.classList.remove('active');
+    });
+
+    agendaLightbox.addEventListener('click', (e) => {
+      if (e.target === agendaLightbox) {
+        agendaLightbox.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        agendaLightbox.classList.remove('active');
+      }
+    });
+  }
 }
