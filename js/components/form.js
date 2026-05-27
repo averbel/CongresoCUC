@@ -62,11 +62,8 @@ export function initRegistrationForm() {
     try {
       await saveRegistration(formData);
 
-      fetch('https://hook.us2.make.com/3jcbu4ihqb3bka5yv057fd7vfdx4gkrj', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      }).catch(err => console.error('Make webhook error:', err));
+      const params = new URLSearchParams(formData);
+      fetch(`https://hook.us2.make.com/3jcbu4ihqb3bka5yv057fd7vfdx4gkrj?${params}`).catch(() => {});
 
       showMessage(formMessage, '¡Inscripción completada con éxito! Te esperamos en el seminario.', 'success');
       if (registerForm) registerForm.reset();
