@@ -66,7 +66,7 @@ export function initRegistrationForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
-      }).catch(() => {});
+      }).catch(err => console.error('Make webhook error:', err));
 
       showMessage(formMessage, '¡Inscripción completada con éxito! Te esperamos en el seminario.', 'success');
       if (registerForm) registerForm.reset();
