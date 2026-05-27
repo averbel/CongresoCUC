@@ -5,23 +5,25 @@ const BUCKET = "exports"
 const FILE = "registros.xls"
 
 function escapeXml(s: string): string {
-  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+  const a = "&"
+  return s
+    .replace(/&/g, a + "amp;")
+    .replace(/</g, a + "lt;")
+    .replace(/>/g, a + "gt;")
+    .replace(/"/g, a + "quot;")
 }
 
 function buildExcelXml(rows: Record<string, string>[]): string {
   const headers = Object.keys(rows[0] ?? {})
-
   const rowsXml = rows.map((row) => {
     const cells = headers.map((h) =>
       `<Cell><Data ss:Type="String">${escapeXml(row[h])}</Data></Cell>`
     ).join("")
     return `    <Row>${cells}</Row>`
   }).join("\n")
-
   const headerRow = headers.map((h) =>
     `<Cell><Data ss:Type="String">${escapeXml(h)}</Data></Cell>`
   ).join("")
-
   return `<?xml version="1.0" encoding="UTF-8"?>
 <?mso-application progid="Excel.Sheet"?>
 <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
@@ -43,12 +45,10 @@ Deno.serve(async (_req) => {
       Deno.env.get("SUPABASE_URL")!,
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     )
-
     const { data: registrations, error } = await supabase
       .from("registrations")
       .select("nombre, email, universidad, tipo_participante, fecha_registro, evento")
       .order("fecha_registro", { ascending: true })
-
     if (error) throw error
 
     const rows = registrations.map((r, i) => ({
@@ -62,8 +62,7 @@ Deno.serve(async (_req) => {
     }))
 
     const xml = buildExcelXml(rows)
-    const encoder = new TextEncoder()
-    const buffer = encoder.encode(xml)
+    const buffer = new TextEncoder().encode(xml)
 
     const { error: bucketError } = await supabase.storage.getBucket(BUCKET)
     if (bucketError) {
@@ -76,10 +75,9 @@ Deno.serve(async (_req) => {
         contentType: "application/vnd.ms-excel",
         upsert: true
       })
-
     if (uploadError) throw uploadError
 
-    console.log(`Excel actualizado — ${registrations.length} registros`)
+    console.log("Excel actualizado — " + registrations.length + " registros")
     return new Response("ok", { status: 200 })
   } catch (e) {
     console.error("Error generando Excel:", e)
