@@ -62,11 +62,6 @@ export function initRegistrationForm() {
     try {
       await saveRegistration(formData);
 
-      const params = new URLSearchParams(formData);
-      fetch(`https://hook.us2.make.com/3jcbu4ihqb3bka5yv057fd7vfdx4gkrj?${params}`, {
-        method: 'GET', mode: 'no-cors'
-      }).catch(() => {});
-
       showMessage(formMessage, '¡Inscripción completada con éxito! Te esperamos en el seminario.', 'success');
       if (registerForm) registerForm.reset();
 
