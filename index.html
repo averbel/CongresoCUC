@@ -277,7 +277,12 @@
             <div class="container">
                 <h2 class="section-title">Nuestros Expositores</h2>
                 <p class="section-subtitle">Conoce a los expertos que liderarán las conferencias de nuestro seminario.</p>
-                <div class="expositores-grid">
+                <div class="expositores-carousel reveal">
+                    <button class="expositores-carousel__btn expositores-carousel__btn--prev" aria-label="Anterior expositor">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="expositores-carousel__viewport">
+                        <div class="expositores-carousel__track">
                     <!-- FEATURED SPEAKER 1 -->
                     <div class="expositor-card featured reveal" data-speaker="nelson-david-lay-raby">
                         <div class="inst-badge">Invitado Especial</div>
@@ -492,7 +497,13 @@
                     </div>
                 </div>
             </div>
-        </section>
+            <button class="expositores-carousel__btn expositores-carousel__btn--next" aria-label="Siguiente expositor">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="expositores-carousel__dots"></div>
+        </div>
+    </div>
+</section>
 
         <!-- ARTICULOS -->
         <section id="articulos" class="section bg-light">

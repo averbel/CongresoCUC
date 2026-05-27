@@ -41,7 +41,16 @@ class ExpositoresCarousel {
 
     this.isAnimating = true;
     this.currentIndex = index;
-    const offset = -(index * 100) / this.itemsPerView;
+    
+    // Desplazamiento página por página (100% del viewport por página)
+    let offset = -(index * 100);
+    
+    // Límite máximo para no pasar del último expositor y evitar espacios vacíos
+    const maxOffset = -((this.cards.length - this.itemsPerView) * (100 / this.itemsPerView));
+    if (offset < maxOffset) {
+      offset = maxOffset;
+    }
+
     this.track.style.transform = `translateX(${offset}%)`;
     this.updateDots();
     this.resetAutoplay();
