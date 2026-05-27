@@ -4,7 +4,7 @@ import { initTabs } from './components/tabs.js';
 import { initModals } from './components/modals.js';
 import { initRegistrationForm } from './components/form.js';
 import { initGalleryCarousel } from './components/gallery-carousel.js';
-import { initExpositoresCarousel } from './components/expositores-carousel.js';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
@@ -13,5 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initRegistrationForm();
   initGalleryCarousel();
-  initExpositoresCarousel();
+
 });
